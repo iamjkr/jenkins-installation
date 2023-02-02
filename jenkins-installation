@@ -1,0 +1,13 @@
+1. update machine : sudo apt-get update 
+install java: sudo apt install openjdk-11-jre
+Add keys: 
+[i. Download the public key for Jenkins: wget -q https://pkg.jenkins.io/debian/jenkins.io.key
+ii. Import the key into your system's package manager: sudo apt-key add jenkins.io.key
+iii. Add the Jenkins repository to your system's sources list: sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+iv. Update the package list: sudo apt update
+]
+ We can merge the commands into a single command, using a pipe (|) to chain the commands together: 
+ wget -q https://pkg.jenkins.io/debian/jenkins.io.key && sudo apt-key add jenkins.io.key && sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list' && sudo apt-get update
+
+Now Install jenkins: sudo apt install jenkins
+Check Jenkins Status: sudo systemctl status jenkins
